@@ -1,0 +1,31 @@
+production: true
+title : Blog Title
+tagline: Blog Tagline
+author :
+  name : Firstname Lastname
+  email : blah@email.test
+  github : username
+  twitter : username
+  feedburner : feedname
+
+navigation:
+  - index.html
+  - pricing_and_signup.html
+  - faq.html
+  - contact.html
+  
+footer_navigation:
+  - terms_of_service.html
+  - privacy_policy.html
+
+
+api:
+  api_site: "http://api.pluspanda.com"
+  api_site_versioned: "http://api.pluspanda.com/v1"
+  apikey: "nbE6zpH"
+  homepage_url: "http://api.pluspanda.com/admin"
+    
+widget_url: "http://api.pluspanda.com/v1/testimonials/widget.js?apikey=nbE6zpH"
+collect_url: = "http://api.pluspanda.com/v1/testimonials/new?apikey=nbE6zpH"
+
+    

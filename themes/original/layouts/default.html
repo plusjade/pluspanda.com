@@ -1,0 +1,112 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <title>{{ page.meta_title }} | PlusPanda</title>
+  <meta name="description" content="{{page.description}}" />
+  <meta name="google-site-verification" content="V80VygXkuzvIBgN6-03u1PMHN05e1C2q0iK--hl3vPQ" />
+  <link href="http://s3.amazonaws.com/pluspanda/marketing/stylesheets/template.css" media="screen" rel="stylesheet" type="text/css" /> 
+
+{{#data.production}}
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-635329-10']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+{{/data.production}}
+{{^data.production}}
+  <script type="text/javascript" src="/javascripts/jquery.js"></script>
+{{/data.production}}
+</head>
+<body>
+  <div id="outer">
+    <div class="contentwidth main">  
+      <a href="{{ data.api.homepage_url }}" id="login-link">Login</a>  
+      <a href="{{urls.base_path}}"><img src="{{urls.media}}/images/pluspanda-logo.png" class="logo" alt="pluspanda logo"></a>
+
+      <div class="menu">
+        <ul class="clearfix">
+      {{#data.navigation?to_pages?mark_active_page}}
+        {{#is_active_page}}
+          <li><a href="{{ url }}" class="active">{{ title.upcase }}</a></li>
+        {{/is_active_page}}
+        {{^is_active_page}}
+          <li><a href="{{ url }}">{{ title.upcase }}</a></li>
+        {{/is_active_page}}
+      {{/data.navigation?to_pages?mark_active_page}}
+        </ul>
+      </div>    
+    
+      {{{ content }}}
+    </div>
+    
+    <div class="footer">
+      <div class="contentwidth">
+      {{#data.production}}
+        <p>
+          <script type="text/javascript"><!--
+          google_ad_client = "ca-pub-9072966970678141";
+          /* test panda footer */
+          google_ad_slot = "9654225647";
+          google_ad_width = 728;
+          google_ad_height = 15;
+          //-->
+          </script>
+          <script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"> </script>
+        </p>
+      {{/data.production}}
+        <p><strong>&copy; 2009 PlusPanda =)</strong></p>
+        <ul class="footer-menu">
+        {{#data.navigation?to_pages?mark_active_page}}
+          <li><a href="{{url}}">{{title}}</a></li>
+        {{/data.navigation?to_pages?mark_active_page}}
+        {{#data.footer_navigation?to_pages}}
+          <li><a href="{{url}}">{{title}}</a></li>
+        {{/data.footer_navigation?to_pages}}
+        </ul>
+      </div>
+    </div>
+    
+  </div>
+  
+{{#data.production}}
+  <script type='text/javascript'> var mp_protocol = (('https:' == document.location.protocol) ? 'https://' : 'http://'); document.write(unescape('%3Cscript src="' + mp_protocol + 'api.mixpanel.com/site_media/js/api/mixpanel.js" type="text/javascript"%3E%3C/script%3E')); </script> <script type='text/javascript'> try {  var mpmetrics = new MixpanelLib('e233a4126551c2a216865fbc4bfcd13c'); } catch(err) { null_fn = function () {}; var mpmetrics = {  track: null_fn,  track_funnel: null_fn,  register: null_fn,  register_once: null_fn, register_funnel: null_fn }; } </script>
+  <script type="text/javascript">
+    var clicky = { log: function(){ return; }, goal: function(){ return; }};
+    var clicky_site_id = 155811;
+    (function() {
+      var s = document.createElement('script');
+      s.type = 'text/javascript';
+      s.async = true;
+      s.src = ( document.location.protocol == 'https:' ? 'https://static.getclicky.com/js' : 'http://static.getclicky.com/js' );
+      ( document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0] ).appendChild( s );
+    })();
+  </script>
+
+  <noscript><p><img alt="Clicky" width="1" height="1" src="http://in.getclicky.com/155811ns.gif" /></p></noscript>
+{{/data.production}}
+{{^data.production}}
+  <script>
+    /* stub methods */
+    mpmetrics = {track : function(e){console.log(e);}}
+  </script>
+{{/data.production}}
+  <script type="text/javascript">
+    $(function(){
+      $("a").click(function(){
+        mpmetrics.track($(this).text());
+      });
+      $("form").submit(function(){
+        mpmetrics.track($(this).find("button").text());
+      });    
+    });
+  </script>
+</body>
+</html>
