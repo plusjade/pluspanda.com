@@ -17,6 +17,7 @@ posts:
 pages:
   summary_lines: 20
   layout: default
+  permalink: "/:relative_path/:filename"
 
 paginator:
   namespace: "/posts/"

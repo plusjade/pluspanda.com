@@ -33,14 +33,14 @@
 
       <div class="menu">
         <ul class="clearfix">
-      {{#data.navigation?to_pages?mark_active_page}}
+      {{#data.navigation?to_pages}}
         {{#is_active_page}}
           <li><a href="{{ url }}" class="active">{{ title.upcase }}</a></li>
         {{/is_active_page}}
         {{^is_active_page}}
           <li><a href="{{ url }}">{{ title.upcase }}</a></li>
         {{/is_active_page}}
-      {{/data.navigation?to_pages?mark_active_page}}
+      {{/data.navigation?to_pages}}
         </ul>
       </div>    
     
@@ -49,24 +49,11 @@
     
     <div class="footer">
       <div class="contentwidth">
-      {{#data.production}}
-        <p>
-          <script type="text/javascript"><!--
-          google_ad_client = "ca-pub-9072966970678141";
-          /* test panda footer */
-          google_ad_slot = "9654225647";
-          google_ad_width = 728;
-          google_ad_height = 15;
-          //-->
-          </script>
-          <script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"> </script>
-        </p>
-      {{/data.production}}
         <p><strong>&copy; 2009 PlusPanda =)</strong></p>
         <ul class="footer-menu">
-        {{#data.navigation?to_pages?mark_active_page}}
+        {{#data.navigation?to_pages}}
           <li><a href="{{url}}">{{title}}</a></li>
-        {{/data.navigation?to_pages?mark_active_page}}
+        {{/data.navigation?to_pages}}
         {{#data.footer_navigation?to_pages}}
           <li><a href="{{url}}">{{title}}</a></li>
         {{/data.footer_navigation?to_pages}}
