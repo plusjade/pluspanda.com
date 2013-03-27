@@ -10,7 +10,7 @@ author :
 
 navigation:
   - index.html
-  - pricing_and_signup.html
+  - {url : "http://api.pluspanda.com/account/new", title : "Pricing & Signup"}
   - faq.html
   - contact.html
   
